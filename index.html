@@ -515,12 +515,15 @@
     }
 
     function speak(text) {
-      if (window.responsiveVoice) {
-        responsiveVoice.speak(text, "UK English Male");
-      } else {
-        console.error("ResponsiveVoice API not available.");
-      }
-    }
+  if (text === "a") {
+    const audio = new Audio("sounds/a_article.m4a");
+    audio.play();
+  } else if (window.responsiveVoice) {
+    responsiveVoice.speak(text, "UK English Male");
+  } else {
+    console.error("ResponsiveVoice API not available.");
+  }
+}
 
     // On page load
     window.onload = function() {
